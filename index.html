@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مولّد الدروس التفاعلي</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>🎓 مولّد تحضير الدروس والأوراق والألعاب التعليمية</h1>
+      <p class="sub">ارفع صور صفحات الكتاب، واختر المرحلة والمادة، ودع الذكاء الاصطناعي يجهّز لك كل شيء.</p>
+    </header>
+
+    <section class="panel" id="config-panel">
+      <div class="row">
+        <label>
+          المرحلة الدراسية
+          <select id="stage">
+            <option value="">اختر المرحلة</option>
+            <option>الروضة</option>
+            <option>الصف الأول الابتدائي</option>
+            <option>الصف الثاني الابتدائي</option>
+            <option>الصف الثالث الابتدائي</option>
+            <option>الصف الرابع الابتدائي</option>
+            <option>الصف الخامس الابتدائي</option>
+            <option>الصف السادس الابتدائي</option>
+            <option>الصف الأول المتوسط</option>
+            <option>الصف الثاني المتوسط</option>
+            <option>الصف الثالث المتوسط</option>
+            <option>الصف الأول الثانوي</option>
+            <option>الصف الثاني الثانوي</option>
+            <option>الصف الثالث الثانوي</option>
+          </select>
+        </label>
+
+        <label>
+          المادة الدراسية
+          <select id="subject">
+            <option value="">اختر المادة</option>
+            <option>اللغة العربية</option>
+            <option>اللغة الإنجليزية</option>
+            <option>الرياضيات</option>
+            <option>العلوم</option>
+            <option>الدراسات الاجتماعية</option>
+            <option>التربية الإسلامية</option>
+            <option>مادة أخرى</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="row">
+        <label class="full">
+          صور صفحات الدرس (يمكن اختيار أكثر من صورة)
+          <input type="file" id="images" accept="image/*" multiple>
+        </label>
+      </div>
+
+      <div id="preview-strip" class="preview-strip"></div>
+
+      <div class="row">
+        <label class="full">
+          عنوان الدرس / الأسبوع (اختياري - يساعد في الدقة)
+          <input type="text" id="lessonTitle" placeholder="مثال: دورة الماء - الأسبوع 3">
+        </label>
+      </div>
+
+      <button id="generateBtn" class="primary-btn">🚀 توليد المحتوى</button>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section id="results" class="results hidden">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="prep">📋 تحضير الدرس</button>
+        <button class="tab-btn" data-tab="worksheet">📝 ورقة العمل</button>
+        <button class="tab-btn" data-tab="game">🎮 اللعبة التعليمية</button>
+      </div>
+
+      <div id="tab-prep" class="tab-content active">
+        <div class="tab-toolbar">
+          <button class="dl-btn" data-target="prep">⬇️ تنزيل كصفحة HTML</button>
+        </div>
+        <iframe id="frame-prep" class="output-frame"></iframe>
+      </div>
+
+      <div id="tab-worksheet" class="tab-content">
+        <div class="tab-toolbar">
+          <button class="dl-btn" data-target="worksheet">⬇️ تنزيل كصفحة HTML (جاهزة للطباعة)</button>
+        </div>
+        <iframe id="frame-worksheet" class="output-frame"></iframe>
+      </div>
+
+      <div id="tab-game" class="tab-content">
+        <div class="tab-toolbar">
+          <button class="dl-btn" data-target="game">⬇️ تنزيل ملف اللعبة (game.html) لرفعه على GitHub Pages</button>
+        </div>
+        <iframe id="frame-game" class="output-frame"></iframe>
+      </div>
+    </section>
+  </div>
+
+  <script src="assets/game-engine.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
